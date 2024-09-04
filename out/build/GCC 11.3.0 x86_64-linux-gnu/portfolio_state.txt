@@ -1,0 +1,19 @@
+Stock,Tech Corp,1500,50,0.05
+Bond,Gov Bond,2000,0.03,2030-01-01
+MutualFund,Growth Fund,3000,0.02
+--- Snapshots ---
+Tech Corp,1000,1725466210
+Gov Bond,2000,1725466210
+Growth Fund,3000,1725466210
+Tech Corp,1000,1725466210
+Gov Bond,2000,1725466210
+Growth Fund,3000,1725466210
+Tech Corp,1200,1725466212
+Gov Bond,2000,1725466212
+Growth Fund,3000,1725466212
+Tech Corp,1500,1725466214
+Gov Bond,2000,1725466214
+Growth Fund,3000,1725466214
+--- Intermediaries ---
+Broker,John Smith
+MutualFundManager,Jordan Carter
