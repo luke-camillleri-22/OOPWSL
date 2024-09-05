@@ -1,0 +1,78 @@
+syntax = "proto3";
+
+package com.example;
+
+// Assets
+
+message Asset_Proto{
+    string type = 1;
+    oneof asset {
+        Stock_Proto stock = 2;
+        Bond_Proto bond = 3;
+        MutualFund_Proto mutualFund = 4;
+    }
+}
+
+message BaseAsset_Proto{
+    string name = 1;
+    float value = 2;
+}
+
+message Stock_Proto{
+    BaseAsset_Proto baseAsset = 1;
+    string ticker = 2;
+    int32 shares = 3;
+    float dividendYield = 4;
+}
+
+message Bond_Proto{
+    BaseAsset_Proto baseAsset = 1;
+    float interestRate = 2;
+    string maturityDate = 3;
+}
+
+message MutualFund_Proto{
+    BaseAsset_Proto baseAsset = 1;
+    float expenseRatio = 2;
+}
+
+
+// Intermediaries
+
+message Intermediary_Proto{
+    string type = 1;
+    string name = 2;
+    oneof intermediary {
+        Broker_Proto broker = 3;
+        Bank_Proto bank = 4;
+        MutualFundManager_Proto mutualFundManager = 5;
+    }
+}
+
+message Broker_Proto{
+    Intermediary_Proto intermediary = 1;
+}
+
+message Bank_Proto{
+    Intermediary_Proto intermediary = 1;
+}
+
+message MutualFundManager_Proto{
+    Intermediary_Proto intermediary = 1;
+}
+
+// Snapshots
+
+message Snapshot_Proto{
+    string assetName = 1;
+    float assetValue = 2;
+    string timestamp = 3;
+}
+
+// Portfolio
+
+message Portfolio_Proto{
+    repeated Asset_Proto assets = 1;
+    repeated Intermediary_Proto intermediaries = 2;
+    repeated Snapshot_Proto snapshots = 3;
+}

@@ -10,6 +10,14 @@ public class Bond extends FinancialAsset {
         this.maturityDate = maturityDate;
     }
 
+    public float getInterestRate() {
+        return interestRate;
+    }
+
+    public String getMaturityDate() {
+        return maturityDate;
+    }
+
     @Override
     public float calculateAnnualReturn() {
         return value * interestRate;  // This formula is correct

@@ -8,6 +8,10 @@ public class MutualFund extends FinancialAsset {
         this.expenseRatio = expenseRatio;
     }
 
+    public float getExpenseRatio() {
+        return expenseRatio;
+    }
+
     @Override
     public float calculateAnnualReturn() {
         return value * expenseRatio;

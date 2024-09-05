@@ -1,13 +1,15 @@
 package com.example;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
-public class Snapshot {
-    private String assetName;
-    private float assetValue;
-    private LocalDateTime timestamp;
+public final class Snapshot {
 
-    public Snapshot(String assetName, float assetValue, LocalDateTime timestamp) {
+    private final String assetName;
+    private final float assetValue;
+    private final String timestamp;
+
+    public Snapshot(String assetName, float assetValue, String timestamp) {
         this.assetName = assetName;
         this.assetValue = assetValue;
         this.timestamp = timestamp;
@@ -21,7 +23,7 @@ public class Snapshot {
         return assetValue;
     }
 
-    public LocalDateTime getTimestamp() {
+    public String getTimestamp() {
         return timestamp;
     }
 

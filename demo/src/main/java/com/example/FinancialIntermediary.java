@@ -1,6 +1,7 @@
 package com.example;
 
 public abstract class FinancialIntermediary {
+
     protected String intermediaryName;
 
     public FinancialIntermediary(String intermediaryName) {

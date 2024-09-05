@@ -6,6 +6,10 @@ public class Bank extends FinancialIntermediary {
         super(intermediaryName);
     }
 
+    public String getIntermediaryName() {
+        return intermediaryName;
+    }
+
     @Override
     public void displayIntermediary() {
         System.out.println("Bank: " + intermediaryName);

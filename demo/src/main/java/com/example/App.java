@@ -6,16 +6,24 @@ import java.time.LocalDateTime;
 import com.example.Bond;
 import com.example.MutualFund;
 import com.example.Portfolio;
+import com.example.AssetBuilder;
+import com.example.IntermediaryBuilder;
+import com.example.FinancialPortfolio;
+import com.example.Facade;
 
 public class App {
     public static void main(String[] args) throws IOException {
         Portfolio portfolio = new Portfolio();
         String saveLoadPath = "portfolio_state.txt";
+        Facade facade = new Facade("portfolio_state.bin");
+        FinancialPortfolio.Portfolio_Proto.Builder portfolioBuilder = FinancialPortfolio.Portfolio_Proto.newBuilder();
 
 
         boolean end = false;
 
         while(!end){
+            System.out.println("---------------------Portfolio Management System---------------------");
+            System.out.println("Enter Choice: ");
             System.out.println("1. Add Asset");
             System.out.println("2. Get Asset");
             System.out.println("3. Update Asset");
@@ -28,10 +36,14 @@ public class App {
             System.out.println("10. Load State");
             System.out.println("11. Display Snapshots for Asset");
             System.out.println("12. Clear Portfolio");
-            System.out.println("13. Exit");
+            System.out.println("13. Calculate Annual Return");
+            System.out.println("14. Exit");
 
+            System.out.print("Choice: ");
             int choice = Integer.parseInt(System.console().readLine());
             String assetName;
+            AssetBuilder assetBuilder = new AssetBuilder();
+            IntermediaryBuilder intermediaryBuilder = new IntermediaryBuilder();
 
             switch(choice){
                 case 1:
@@ -53,8 +65,16 @@ public class App {
 
                         System.out.println("Enter Stock Dividend Yield: ");
                         float assetDividendYield = Float.parseFloat(System.console().readLine());
+                        
+                        FinancialAsset stock = assetBuilder
+                            .setName(assetName)
+                            .setValue(assetValue)
+                            .setTickerSymbol(tickerSymbol)
+                            .setShares(shares)
+                            .setDividendYield(assetDividendYield)
+                            .setType("Stock")
+                            .build();
 
-                        Stock stock = new Stock(assetName, assetValue, tickerSymbol, shares, assetDividendYield);
                         portfolio.addAsset(stock);
                     }
                     else if(assetType.equals("Bond")){
@@ -104,16 +124,22 @@ public class App {
                     String intermediaryName = System.console().readLine();
 
                     if(intermediaryType.equals("Broker")){
-                        Broker broker = new Broker(intermediaryName);
-                        portfolio.addIntermediary(broker);
+                        portfolio.addIntermediary(new IntermediaryBuilder()
+                            .setName(intermediaryName)
+                            .setType("Broker")
+                            .build());
                     }
                     else if(intermediaryType.equals("Bank")){
-                        Bank bank = new Bank(intermediaryName);
-                        portfolio.addIntermediary(bank);
+                        portfolio.addIntermediary(new IntermediaryBuilder()
+                            .setName(intermediaryName)
+                            .setType("Bank")
+                            .build());
                     }
                     else if(intermediaryType.equals("MutualFundManager")){
-                        MutualFundManager mutualFundManager = new MutualFundManager(intermediaryName);
-                        portfolio.addIntermediary(mutualFundManager);
+                        portfolio.addIntermediary(new IntermediaryBuilder()
+                            .setName(intermediaryName)
+                            .setType("MutualFundManager")
+                            .build());
                     }else{
                         System.out.println("Invalid Intermediary Type");
                     }
@@ -128,10 +154,61 @@ public class App {
                     portfolio.displaySnapshots();
                     break;
                 case 9:
-                    portfolio.saveState(saveLoadPath);
+                    try{
+                        // Add assets to portfolioBuilder
+
+                        System.out.println(portfolio.getAssets());
+                        for (FinancialAsset saveAsset : portfolio.getAssets()) {
+                            FinancialPortfolio.Asset_Proto assetProto = AssetBuilder.toProto(saveAsset);
+                            portfolioBuilder.addAssets(assetProto);
+                        }
+
+                        // Add intermediaries
+                        for (FinancialIntermediary saveIntermediary : portfolio.getIntermediaries()) {
+                            FinancialPortfolio.Intermediary_Proto intermediaryProto = IntermediaryBuilder.toProto(saveIntermediary);
+                            portfolioBuilder.addIntermediaries(intermediaryProto);
+                        }
+
+                        // Add snapshots
+                        for (Snapshot saveSnapshot : portfolio.getSnapshots()) {
+                            FinancialPortfolio.Snapshot_Proto snapshotProto = SnapshotBuilder.toProto(saveSnapshot);
+                            portfolioBuilder.addSnapshots(snapshotProto);
+                        }
+
+                        FinancialPortfolio.Portfolio_Proto portfolioProto = portfolioBuilder.build();
+                        facade.save(portfolioProto);
+
+                        System.out.println("Portfolio saved successfully.");
+                    }catch (IOException e){
+                        System.out.println("Error saving portfolio: " + e.getMessage());
+                    }
                     break;
                 case 10:
-                    portfolio.loadState(saveLoadPath);
+                    try {
+                        FinancialPortfolio.Portfolio_Proto portfolioProto = facade.load();
+
+                        portfolio = new Portfolio();
+                        // Populate portfolio with assets
+                        for (FinancialPortfolio.Asset_Proto assetProto : portfolioProto.getAssetsList()) {
+                            FinancialAsset loadAsset = AssetBuilder.fromProto(assetProto);
+                            portfolio.addAsset(loadAsset);
+                        }
+
+                        // Populate portfolio with intermediaries
+                        for (FinancialPortfolio.Intermediary_Proto intermediaryProto : portfolioProto.getIntermediariesList()) {
+                            FinancialIntermediary loadIntermediary = IntermediaryBuilder.fromProto(intermediaryProto);
+                            portfolio.addIntermediary(loadIntermediary);
+                        }
+
+                        // Populate portfolio with snapshots
+                        for (FinancialPortfolio.Snapshot_Proto snapshotProto : portfolioProto.getSnapshotsList()) {
+                            Snapshot loadSnapshot = SnapshotBuilder.fromProto(snapshotProto);
+                            portfolio.addSnapshot(loadSnapshot);
+}
+                        System.out.println("Portfolio loaded successfully.");
+                    } catch (IOException e) {
+                        System.out.println("Error loading portfolio: " + e.getMessage());
+                    }
                     break;
                 case 11:
                     System.out.println("Enter Asset Name: ");
@@ -147,6 +224,11 @@ public class App {
                     portfolio = new Portfolio();
                     break;
                 case 13:
+                    System.out.println("Calculating Annual Return...");
+                    System.out.println("Annual Return: " + portfolio.calculateTotalAnnualReturn() + "%");
+                    System.out.println();
+                    break;
+                case 14:
                     end = true;
                     break;
                 default:
@@ -157,12 +239,6 @@ public class App {
                 System.out.println();
                 System.out.println();
                 System.out.println();
-                System.out.println();
-                System.out.println();
-                System.out.println();
-                System.out.println();
-                System.out.println();
-                
         }
             
     }

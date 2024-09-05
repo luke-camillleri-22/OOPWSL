@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.example.AppTest" time="0.077" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.example.AppTest" time="0.075" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
-    <property name="java.class.path" value="/mnt/c/Users/Owner/OOP/demo/target/test-classes:/mnt/c/Users/Owner/OOP/demo/target/classes:/home/lukec/.m2/repository/junit/junit/4.11/junit-4.11.jar:/home/lukec/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:"/>
+    <property name="java.class.path" value="/mnt/c/Users/Owner/OOP/demo/target/test-classes:/mnt/c/Users/Owner/OOP/demo/target/classes:/home/lukec/.m2/repository/junit/junit/4.11/junit-4.11.jar:/home/lukec/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home/lukec/.m2/repository/com/google/protobuf/protobuf-java/3.12.4/protobuf-java-3.12.4.jar:"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.vendor.url" value="https://java.oracle.com/"/>
@@ -11,9 +11,9 @@
     <property name="java.vm.specification.version" value="17"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="/home/lukec/.sdkman/candidates/java/17.0.12-oracle/lib"/>
-    <property name="sun.java.command" value="/mnt/c/Users/Owner/OOP/demo/target/surefire/surefirebooter1264924132940396984.jar /mnt/c/Users/Owner/OOP/demo/target/surefire 2024-09-05T00-25-05_274-jvmRun1 surefire2417314093703359259tmp surefire_03871701696963821093tmp"/>
+    <property name="sun.java.command" value="/mnt/c/Users/Owner/OOP/demo/target/surefire/surefirebooter13772241344297956995.jar /mnt/c/Users/Owner/OOP/demo/target/surefire 2024-09-05T23-17-19_361-jvmRun1 surefire9671044589762637609tmp surefire_04465522395072108062tmp"/>
     <property name="jdk.debug" value="release"/>
-    <property name="surefire.test.class.path" value="/mnt/c/Users/Owner/OOP/demo/target/test-classes:/mnt/c/Users/Owner/OOP/demo/target/classes:/home/lukec/.m2/repository/junit/junit/4.11/junit-4.11.jar:/home/lukec/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:"/>
+    <property name="surefire.test.class.path" value="/mnt/c/Users/Owner/OOP/demo/target/test-classes:/mnt/c/Users/Owner/OOP/demo/target/classes:/home/lukec/.m2/repository/junit/junit/4.11/junit-4.11.jar:/home/lukec/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home/lukec/.m2/repository/com/google/protobuf/protobuf-java/3.12.4/protobuf-java-3.12.4.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="/home/lukec"/>
     <property name="user.language" value="en"/>
@@ -26,7 +26,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="/mnt/c/Users/Owner/OOP/demo/target/surefire/surefirebooter1264924132940396984.jar"/>
+    <property name="surefire.real.class.path" value="/mnt/c/Users/Owner/OOP/demo/target/surefire/surefirebooter13772241344297956995.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="17.0.12+8-LTS-286"/>
     <property name="user.name" value="lukec"/>

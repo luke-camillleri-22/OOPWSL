@@ -1,0 +1,4 @@
+Stock,Test,12.0,test,100000,312.0
+Snapshot,Test,12.0,2024-09-05T17:28:44.436282106
+Broker,ben
+MutualFundManager,Benson

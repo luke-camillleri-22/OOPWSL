@@ -12,6 +12,18 @@ public class Stock extends FinancialAsset {
         this.dividendYield = dividendYield;
     }
 
+    public String getTickerSymbol() {
+        return tickerSymbol;
+    }
+
+    public int getShares() {
+        return shares;
+    }
+
+    public float getDividendYield() {
+        return dividendYield;
+    }
+
     @Override
     public float calculateAnnualReturn() {
         // Correct formula for calculating dividend yield per share
@@ -23,4 +35,5 @@ public class Stock extends FinancialAsset {
         System.out.println("Stock: " + name + ", Ticker: " + tickerSymbol + ", Value: $" + value
                 + ", Shares: " + shares + ", Dividend Yield: " + dividendYield);
     }
+    
 }

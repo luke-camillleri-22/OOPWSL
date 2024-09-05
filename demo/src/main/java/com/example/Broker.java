@@ -6,6 +6,10 @@ public class Broker extends FinancialIntermediary {
         super(intermediaryName);
     }
 
+    public String getIntermediaryName() {
+        return intermediaryName;
+    }
+
     @Override
     public void displayIntermediary() {
         System.out.println("Broker: " + intermediaryName);

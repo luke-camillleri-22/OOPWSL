@@ -16,11 +16,7 @@ public abstract class FinancialAsset {
     public float getValue() {
         return value;
     }
-
-    public void setValue(float value) {
-        this.value = value;
-    }
-
+    
     public abstract float calculateAnnualReturn();
     public abstract void displayAsset();
 }
