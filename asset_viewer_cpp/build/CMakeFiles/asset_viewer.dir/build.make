@@ -69,31 +69,48 @@ include CMakeFiles/asset_viewer.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/asset_viewer.dir/flags.make
 
-CMakeFiles/asset_viewer.dir/main.cpp.o: CMakeFiles/asset_viewer.dir/flags.make
-CMakeFiles/asset_viewer.dir/main.cpp.o: ../main.cpp
-CMakeFiles/asset_viewer.dir/main.cpp.o: CMakeFiles/asset_viewer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/Owner/OOP/asset_viewer_cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/asset_viewer.dir/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/asset_viewer.dir/main.cpp.o -MF CMakeFiles/asset_viewer.dir/main.cpp.o.d -o CMakeFiles/asset_viewer.dir/main.cpp.o -c /mnt/c/Users/Owner/OOP/asset_viewer_cpp/main.cpp
+CMakeFiles/asset_viewer.dir/src/main.cpp.o: CMakeFiles/asset_viewer.dir/flags.make
+CMakeFiles/asset_viewer.dir/src/main.cpp.o: ../src/main.cpp
+CMakeFiles/asset_viewer.dir/src/main.cpp.o: CMakeFiles/asset_viewer.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/Owner/OOP/asset_viewer_cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/asset_viewer.dir/src/main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/asset_viewer.dir/src/main.cpp.o -MF CMakeFiles/asset_viewer.dir/src/main.cpp.o.d -o CMakeFiles/asset_viewer.dir/src/main.cpp.o -c /mnt/c/Users/Owner/OOP/asset_viewer_cpp/src/main.cpp
 
-CMakeFiles/asset_viewer.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/asset_viewer.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/Owner/OOP/asset_viewer_cpp/main.cpp > CMakeFiles/asset_viewer.dir/main.cpp.i
+CMakeFiles/asset_viewer.dir/src/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/asset_viewer.dir/src/main.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/Owner/OOP/asset_viewer_cpp/src/main.cpp > CMakeFiles/asset_viewer.dir/src/main.cpp.i
 
-CMakeFiles/asset_viewer.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/asset_viewer.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/Owner/OOP/asset_viewer_cpp/main.cpp -o CMakeFiles/asset_viewer.dir/main.cpp.s
+CMakeFiles/asset_viewer.dir/src/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/asset_viewer.dir/src/main.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/Owner/OOP/asset_viewer_cpp/src/main.cpp -o CMakeFiles/asset_viewer.dir/src/main.cpp.s
+
+CMakeFiles/asset_viewer.dir/src/demo/src/main/proto/financial_portfolio.pb.cc.o: CMakeFiles/asset_viewer.dir/flags.make
+CMakeFiles/asset_viewer.dir/src/demo/src/main/proto/financial_portfolio.pb.cc.o: ../src/demo/src/main/proto/financial_portfolio.pb.cc
+CMakeFiles/asset_viewer.dir/src/demo/src/main/proto/financial_portfolio.pb.cc.o: CMakeFiles/asset_viewer.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/Owner/OOP/asset_viewer_cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/asset_viewer.dir/src/demo/src/main/proto/financial_portfolio.pb.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/asset_viewer.dir/src/demo/src/main/proto/financial_portfolio.pb.cc.o -MF CMakeFiles/asset_viewer.dir/src/demo/src/main/proto/financial_portfolio.pb.cc.o.d -o CMakeFiles/asset_viewer.dir/src/demo/src/main/proto/financial_portfolio.pb.cc.o -c /mnt/c/Users/Owner/OOP/asset_viewer_cpp/src/demo/src/main/proto/financial_portfolio.pb.cc
+
+CMakeFiles/asset_viewer.dir/src/demo/src/main/proto/financial_portfolio.pb.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/asset_viewer.dir/src/demo/src/main/proto/financial_portfolio.pb.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/Owner/OOP/asset_viewer_cpp/src/demo/src/main/proto/financial_portfolio.pb.cc > CMakeFiles/asset_viewer.dir/src/demo/src/main/proto/financial_portfolio.pb.cc.i
+
+CMakeFiles/asset_viewer.dir/src/demo/src/main/proto/financial_portfolio.pb.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/asset_viewer.dir/src/demo/src/main/proto/financial_portfolio.pb.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/Owner/OOP/asset_viewer_cpp/src/demo/src/main/proto/financial_portfolio.pb.cc -o CMakeFiles/asset_viewer.dir/src/demo/src/main/proto/financial_portfolio.pb.cc.s
 
 # Object files for target asset_viewer
 asset_viewer_OBJECTS = \
-"CMakeFiles/asset_viewer.dir/main.cpp.o"
+"CMakeFiles/asset_viewer.dir/src/main.cpp.o" \
+"CMakeFiles/asset_viewer.dir/src/demo/src/main/proto/financial_portfolio.pb.cc.o"
 
 # External object files for target asset_viewer
 asset_viewer_EXTERNAL_OBJECTS =
 
-asset_viewer: CMakeFiles/asset_viewer.dir/main.cpp.o
+asset_viewer: CMakeFiles/asset_viewer.dir/src/main.cpp.o
+asset_viewer: CMakeFiles/asset_viewer.dir/src/demo/src/main/proto/financial_portfolio.pb.cc.o
 asset_viewer: CMakeFiles/asset_viewer.dir/build.make
+asset_viewer: /usr/lib/x86_64-linux-gnu/libprotobuf.so
 asset_viewer: CMakeFiles/asset_viewer.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Users/Owner/OOP/asset_viewer_cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable asset_viewer"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Users/Owner/OOP/asset_viewer_cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable asset_viewer"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/asset_viewer.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

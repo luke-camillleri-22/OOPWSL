@@ -1,1 +1,1 @@
-/usr/bin/c++ -g CMakeFiles/asset_viewer.dir/main.cpp.o -o asset_viewer 
+/usr/bin/c++ -g CMakeFiles/asset_viewer.dir/src/main.cpp.o CMakeFiles/asset_viewer.dir/src/demo/src/main/proto/financial_portfolio.pb.cc.o -o asset_viewer  /usr/lib/x86_64-linux-gnu/libprotobuf.so 

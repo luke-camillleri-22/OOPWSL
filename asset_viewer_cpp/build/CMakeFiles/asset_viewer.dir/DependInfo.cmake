@@ -8,7 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/mnt/c/Users/Owner/OOP/asset_viewer_cpp/main.cpp" "CMakeFiles/asset_viewer.dir/main.cpp.o" "gcc" "CMakeFiles/asset_viewer.dir/main.cpp.o.d"
+  "/mnt/c/Users/Owner/OOP/asset_viewer_cpp/src/demo/src/main/proto/financial_portfolio.pb.cc" "CMakeFiles/asset_viewer.dir/src/demo/src/main/proto/financial_portfolio.pb.cc.o" "gcc" "CMakeFiles/asset_viewer.dir/src/demo/src/main/proto/financial_portfolio.pb.cc.o.d"
+  "/mnt/c/Users/Owner/OOP/asset_viewer_cpp/src/main.cpp" "CMakeFiles/asset_viewer.dir/src/main.cpp.o" "gcc" "CMakeFiles/asset_viewer.dir/src/main.cpp.o.d"
   )
 
 # Targets to which this target links.

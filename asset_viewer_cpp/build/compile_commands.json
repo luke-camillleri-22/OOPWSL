@@ -1,7 +1,12 @@
 [
 {
   "directory": "/mnt/c/Users/Owner/OOP/asset_viewer_cpp/build",
-  "command": "/usr/bin/c++   -g -o CMakeFiles/asset_viewer.dir/main.cpp.o -c /mnt/c/Users/Owner/OOP/asset_viewer_cpp/main.cpp",
-  "file": "/mnt/c/Users/Owner/OOP/asset_viewer_cpp/main.cpp"
+  "command": "/usr/bin/c++   -g -o CMakeFiles/asset_viewer.dir/src/main.cpp.o -c /mnt/c/Users/Owner/OOP/asset_viewer_cpp/src/main.cpp",
+  "file": "/mnt/c/Users/Owner/OOP/asset_viewer_cpp/src/main.cpp"
+},
+{
+  "directory": "/mnt/c/Users/Owner/OOP/asset_viewer_cpp/build",
+  "command": "/usr/bin/c++   -g -o CMakeFiles/asset_viewer.dir/src/demo/src/main/proto/financial_portfolio.pb.cc.o -c /mnt/c/Users/Owner/OOP/asset_viewer_cpp/src/demo/src/main/proto/financial_portfolio.pb.cc",
+  "file": "/mnt/c/Users/Owner/OOP/asset_viewer_cpp/src/demo/src/main/proto/financial_portfolio.pb.cc"
 }
 ]
