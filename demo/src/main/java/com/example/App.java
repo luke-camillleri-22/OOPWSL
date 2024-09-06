@@ -83,14 +83,25 @@ public class App {
 
                         System.out.println("Enter Bond Maturity Date: ");
                         String assetMaturityDate = System.console().readLine();
-                        Bond bond = new Bond(assetName, assetValue, assetInterestRate, assetMaturityDate);
+                        FinancialAsset bond = assetBuilder
+                            .setName(assetName)
+                            .setValue(assetValue)
+                            .setInterestRate(assetInterestRate)
+                            .setMaturityDate(assetMaturityDate)
+                            .setType("Bond")
+                            .build();
                         portfolio.addAsset(bond);
                     }
                     else if(assetType.equals("MutualFund")){
                         System.out.println("Enter Mutual Fund Expense Ratio: ");
                         float assetExpenseRatio = Float.parseFloat(System.console().readLine());
 
-                        MutualFund mutualFund = new MutualFund(assetName, assetValue, assetExpenseRatio);
+                        FinancialAsset mutualFund = assetBuilder
+                            .setName(assetName)
+                            .setValue(assetValue)
+                            .setExpenseRatio(assetExpenseRatio)
+                            .setType("MutualFund")
+                            .build();
                         portfolio.addAsset(mutualFund);
                     }
                     break;
@@ -155,7 +166,6 @@ public class App {
                     break;
                 case 9:
                     try{
-                        // Add assets to portfolioBuilder
 
                         System.out.println(portfolio.getAssets());
                         for (FinancialAsset saveAsset : portfolio.getAssets()) {
@@ -163,13 +173,11 @@ public class App {
                             portfolioBuilder.addAssets(assetProto);
                         }
 
-                        // Add intermediaries
                         for (FinancialIntermediary saveIntermediary : portfolio.getIntermediaries()) {
                             FinancialPortfolio.Intermediary_Proto intermediaryProto = IntermediaryBuilder.toProto(saveIntermediary);
                             portfolioBuilder.addIntermediaries(intermediaryProto);
                         }
 
-                        // Add snapshots
                         for (Snapshot saveSnapshot : portfolio.getSnapshots()) {
                             FinancialPortfolio.Snapshot_Proto snapshotProto = SnapshotBuilder.toProto(saveSnapshot);
                             portfolioBuilder.addSnapshots(snapshotProto);
@@ -188,19 +196,17 @@ public class App {
                         FinancialPortfolio.Portfolio_Proto portfolioProto = facade.load();
 
                         portfolio = new Portfolio();
-                        // Populate portfolio with assets
+
                         for (FinancialPortfolio.Asset_Proto assetProto : portfolioProto.getAssetsList()) {
                             FinancialAsset loadAsset = AssetBuilder.fromProto(assetProto);
                             portfolio.addAsset(loadAsset);
                         }
 
-                        // Populate portfolio with intermediaries
                         for (FinancialPortfolio.Intermediary_Proto intermediaryProto : portfolioProto.getIntermediariesList()) {
                             FinancialIntermediary loadIntermediary = IntermediaryBuilder.fromProto(intermediaryProto);
                             portfolio.addIntermediary(loadIntermediary);
                         }
 
-                        // Populate portfolio with snapshots
                         for (FinancialPortfolio.Snapshot_Proto snapshotProto : portfolioProto.getSnapshotsList()) {
                             Snapshot loadSnapshot = SnapshotBuilder.fromProto(snapshotProto);
                             portfolio.addSnapshot(loadSnapshot);

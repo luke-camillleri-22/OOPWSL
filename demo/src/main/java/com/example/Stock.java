@@ -26,7 +26,7 @@ public class Stock extends FinancialAsset {
 
     @Override
     public float calculateAnnualReturn() {
-        // Correct formula for calculating dividend yield per share
+
         return (value * dividendYield) / shares;
     }
 

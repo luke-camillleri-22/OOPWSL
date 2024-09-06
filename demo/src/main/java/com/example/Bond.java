@@ -20,7 +20,7 @@ public class Bond extends FinancialAsset {
 
     @Override
     public float calculateAnnualReturn() {
-        return value * interestRate;  // This formula is correct
+        return value * interestRate;  
     }
 
     @Override

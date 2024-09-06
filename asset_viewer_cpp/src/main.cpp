@@ -1,6 +1,6 @@
 #include <iostream>
 #include <fstream>
-#include "/mnt/c/Users/Owner/OOP/asset_viewer_cpp/src/demo/src/main/proto/financial_portfolio.pb.h" // Make sure to include the correct generated header
+#include "/mnt/c/Users/Owner/OOP/asset_viewer_cpp/src/demo/src/main/proto/financial_portfolio.pb.h"
 
 void printAsset(const com::example::Asset_Proto& asset) {
     std::string type = asset.type();
@@ -49,25 +49,22 @@ int main(int argc, char** argv) {
         return 1;
     }
 
-    com::example::Portfolio_Proto portfolio; // Use correct namespace and class
+    com::example::Portfolio_Proto portfolio;
     if (!portfolio.ParseFromIstream(&input)) {
         std::cerr << "Failed to parse portfolio." << std::endl;
         return 1;
     }
 
-    // Iterate over assets in the portfolio
     std::cout << "Assets:" << std::endl;
     for (const auto& asset : portfolio.assets()) {
         printAsset(asset);
     }
 
-    // Iterate over intermediaries in the portfolio
     std::cout << "\n\nIntermediaries:" << std::endl;
     for (const auto& intermediary : portfolio.intermediaries()) {
         printIntermediary(intermediary);
     }
 
-    // Iterate over snapshots in the portfolio
     std::cout << "\n\nSnapshots:" << std::endl;
     for (const auto& snapshot : portfolio.snapshots()) {
         printSnapshot(snapshot);

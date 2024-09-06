@@ -14,7 +14,6 @@ public class Facade {
         this.filePath = filePath;
     }
 
-    // Save the current portfolio state to a file
     public void save(FinancialPortfolio.Portfolio_Proto portfolio) throws IOException {
         try (FileOutputStream fos = new FileOutputStream(filePath)) {
             portfolio.writeTo(fos);  // Serialize the portfolio
@@ -22,7 +21,6 @@ public class Facade {
         }
     }
 
-    // Load the portfolio state from a file
     public FinancialPortfolio.Portfolio_Proto load() throws IOException {
         try (FileInputStream fis = new FileInputStream(filePath)) {
             return FinancialPortfolio.Portfolio_Proto.parseFrom(fis);  // Deserialize the portfolio
