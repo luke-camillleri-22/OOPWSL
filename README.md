@@ -74,6 +74,3 @@ Once built, you can run the C++ financial portfolio application by executing:
 ./FinancialPortfolio
 ```
 This application allows you to manage financial portfolios from the console.
-
-## License
-This project is licensed under the MIT License. See the `LICENSE` file for details.
