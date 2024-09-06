@@ -28,7 +28,7 @@ The `demo` directory contains a Java-based financial portfolio management system
 - **Maven Build System**: The `pom.xml` file is located in the `OOP/demo/` directory.
 
 ### 3. Financial Portfolio (C++)
-The `financial_portfolio_cpp` directory contains another C++ application for managing a financial portfolio, distinct from the asset viewer.
+The `OOP` directory contains another C++ application for managing a financial portfolio, distinct from the asset viewer.
 
 - **Source Code**: Located in `OOP/src`.
   - Example: `main.cpp`
