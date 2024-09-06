@@ -1,0 +1,3 @@
+/mnt/c/Users/Owner/OOP/asset_viewer_cpp/build/CMakeFiles/asset_viewer.dir
+/mnt/c/Users/Owner/OOP/asset_viewer_cpp/build/CMakeFiles/edit_cache.dir
+/mnt/c/Users/Owner/OOP/asset_viewer_cpp/build/CMakeFiles/rebuild_cache.dir
